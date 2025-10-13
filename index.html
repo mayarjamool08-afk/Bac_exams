@@ -17,5 +17,32 @@
     <a href="literary.html" class="btn">تحميل دورات ٢٠٢٥ الأدبي</a>
   </div>
   <div class="background-animation"></div>
+  <script>
+  // 👇 غيّر القيمتين هدول حسب بياناتك من JSONBin
+  const binUrl = "https://api.jsonbin.io/v3/b/68ed1380d0ea881f40a0b30c";
+  const accessKey = "$2a$10$M3a8LMA0ouqmrosXXhSCRuy7PE5MnmpTK2JdwOkYNM9zrRaBRHOJu";
+
+  // 🔁 جلب العدد الحالي وزيادته بواحد
+  fetch(binUrl, { headers: { "X-Master-Key": accessKey } })
+    .then(res => res.json())
+    .then(data => {
+      const current = data.record.visits + 1;
+      document.getElementById("visits").textContent = current;
+
+      // 💾 تحديث العدد داخل JSONBin
+      return fetch(binUrl, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Master-Key": accessKey
+        },
+        body: JSON.stringify({ visits: current })
+      });
+    })
+    .catch(err => {
+      console.error("خطأ في تحميل العداد:", err);
+      document.getElementById("visits").textContent = "غير متاح";
+    });
+  </script>
 </body>
 </html>
