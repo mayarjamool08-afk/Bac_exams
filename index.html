@@ -5,18 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>بكالوريا 2026</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Cairo", sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      height: 100vh;
+    }
+
+    .background-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 30%, rgba(0, 173, 181, 0.2), transparent 50%),
+                  radial-gradient(circle at 80% 70%, rgba(238, 238, 238, 0.15), transparent 50%);
+      z-index: -1;
+      animation: moveBg 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes moveBg {
+      from { background-position: 20% 30%, 80% 70%; }
+      to { background-position: 30% 40%, 70% 60%; }
+    }
+
+    h1 {
+      color: #00adb5;
+      font-size: 36px;
+      margin-top: 60px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #00adb5;
+      color: white;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 12px;
+      font-size: 20px;
+      margin: 15px;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(0, 173, 181, 0.4);
+    }
+
+    .btn:hover {
+      background: #028a91;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 173, 181, 0.7);
+    }
+
+    #visitorCount {
+      font-size: 18px;
+      margin-top: 20px;
+      color: white;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      width: 100%;
+      color: #aaa;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
   <p id="visitorCount" style="color:white;font-size:18px;text-align:center;margin-top:20px;">
-  👀 عدد الزوار: <span id="visits">جارٍ التحميل...</span>
+    👀 عدد الزوار: <span id="visits">جارٍ التحميل...</span>
   </p>
+
   <div class="container fade-in">
     <h1>🎓 بكالوريا 2026</h1>
     <p>اختر فرعك لتحميل الدورات:</p>
     <a href="scientific.html" class="btn">تحميل دورات ٢٠٢٥ العلمي</a>
     <a href="literary.html" class="btn">تحميل دورات ٢٠٢٥ الأدبي</a>
   </div>
+
   <div class="background-animation"></div>
+
   <script>
   // 👇 غيّر القيمتين هدول حسب بياناتك من JSONBin
   const binUrl = "https://api.jsonbin.io/v3/b/68ed1380d0ea881f40a0b30c";
@@ -44,5 +125,7 @@
       document.getElementById("visits").textContent = "غير متاح";
     });
   </script>
+
+  <footer>تم التصميم بواسطة ميار ❤️</footer>
 </body>
 </html>
