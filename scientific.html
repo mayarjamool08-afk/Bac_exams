@@ -5,22 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>دورات 2025 العلمي - بكالوريا 2026</title>
   <link rel="stylesheet" href="style.css">
-
   <style>
     body {
-      font-family: "Cairo", sans-serif;
-      background: linear-gradient(135deg, #00264d, #0059b3);
-      color: white;
-      text-align: center;
       margin: 0;
       padding: 0;
+      font-family: "Cairo", sans-serif;
+      color: white;
+      text-align: center;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
       min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .background-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 30%, rgba(0, 173, 181, 0.2), transparent 50%),
+                  radial-gradient(circle at 80% 70%, rgba(238, 238, 238, 0.15), transparent 50%);
+      z-index: -1;
+      animation: moveBg 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes moveBg {
+      from { background-position: 20% 30%, 80% 70%; }
+      to { background-position: 30% 40%, 70% 60%; }
     }
 
     h1 {
-      margin-top: 40px;
-      font-size: 2em;
-      color: #fff;
+      color: #00adb5;
+      font-size: 32px;
+      margin-top: 50px;
     }
 
     .subjects {
@@ -28,64 +45,70 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
-      margin-top: 50px;
+      margin: 40px auto;
+      max-width: 800px;
     }
 
     .subjects a {
       text-decoration: none;
-      background-color: #ffffff22;
-      border: 2px solid #fff;
+      background: #00adb5;
+      color: white;
       padding: 15px 25px;
       border-radius: 12px;
-      color: white;
       font-size: 18px;
       transition: 0.3s;
+      box-shadow: 0 0 15px rgba(0, 173, 181, 0.4);
     }
 
     .subjects a:hover {
-      background-color: #ffffff44;
+      background: #028a91;
       transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 173, 181, 0.7);
     }
 
     .back-btn {
       display: inline-block;
-      margin-top: 60px;
-      background-color: #ffffff22;
+      background: #ffffff22;
       border: 2px solid #fff;
-      padding: 10px 20px;
+      padding: 10px 25px;
       border-radius: 10px;
       color: white;
       text-decoration: none;
+      margin-top: 40px;
       transition: 0.3s;
     }
 
     .back-btn:hover {
       background-color: #ffffff44;
+      transform: scale(1.05);
+    }
+
+    footer {
+      color: #aaa;
+      font-size: 14px;
+      margin-top: 50px;
     }
   </style>
 </head>
 
 <body>
+  <div class="background-animation"></div>
+
   <h1>📘 تحميل دورات 2025 - الفرع العلمي</h1>
 
   <div class="subjects">
     <a href="https://www.mediafire.com/file/p2qdg63eo47yc53/%25D8%25A7%25D8%25B3%25D8%25A6%25D9%2584%25D8%25A9_%25D8%25A7%25D9%2584%25D8%25B1%25D9%258A%25D8%25A7%25D8%25B6%25D9%258A%25D8%25A7%25D8%25AA_%25D8%25AF2025.pdf/file" target="_blank">📐 رياضيات</a>
-
     <a href="https://www.mediafire.com/file/0jscs1w2hgwv01g/%25D9%2581%25D9%258A%25D8%25B2%25D9%258A%25D8%25A7%25D8%25A1.pdf/file" target="_blank">⚡ فيزياء</a>
-
     <a href="https://www.mediafire.com/file/d6nzy25aiutb6ad/%25D9%2583%25D9%258A%25D9%2585%25D9%258A%25D8%25A7%25D8%25A1.pdf/file" target="_blank">🧪 كيمياء</a>
-
     <a href="https://www.mediafire.com/file/6vxivcgce5qausi/%25D8%25B9%25D9%2584%25D9%2588%25D9%2585.pdf/file" target="_blank">🧬 علوم</a>
-
     <a href="https://www.mediafire.com/file/pezfjb76m28b6if/%25D8%25AF%25D9%258A%25D8%25A7%25D9%2586%25D8%25A9.pdf/file" target="_blank">☪️ ديانة</a>
-
     <a href="https://www.mediafire.com/file/055zbs8hhd64fwf/%25D8%25A7%25D9%2586%25D9%2583%25D9%2584%25D9%258A%25D8%25B2%25D9%258A_%25D8%25B9%25D9%2584%25D9%2585%25D9%258A.pdf/file" target="_blank">🇬🇧 إنكليزي</a>
-
     <a href="https://www.mediafire.com/file/ffe4ccg8qedh80a/%25D9%2581%25D8%25B1%25D9%2586%25D8%25B3%25D9%258A_%25D8%25B9%25D9%2584%25D9%2585%25D9%258A.pdf/file" target="_blank">🇫🇷 فرنسي</a>
-
     <a href="https://www.mediafire.com/file/ah5lfvltdor5tun/%25D8%25B9%25D8%25B1%25D8%25A8%25D9%258A_%25D8%25B9%25D9%2584%25D9%2585%25D9%258A.pdf/file" target="_blank">📖 عربي</a>
   </div>
 
   <a href="index.html" class="back-btn">⬅️ العودة إلى الصفحة الرئيسية</a>
+
+  <footer>تم التصميم بواسطة ميار ❤️</footer>
 </body>
 </html>
