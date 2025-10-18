@@ -3,22 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>دورات الأدبي ٢٠٢٥</title>
-  <link rel="stylesheet" href="style.css">
+  <title>الفرع الأدبي - مواد البكالوريا</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: white;
+      font-family: "Cairo", sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #00adb5;
+      margin-bottom: 40px;
+    }
+
+    .button {
+      display: block;
+      width: 80%;
+      max-width: 350px;
+      margin: 15px auto;
+      padding: 15px;
+      background: #00adb5;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: #028a91;
+      transform: scale(1.05);
+    }
+
+    .back-btn {
+      margin-top: 40px;
+      display: inline-block;
+      padding: 12px 25px;
+      background: #393e46;
+      color: #fff;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #00adb5;
+      transform: scale(1.05);
+    }
+
+    #visitorCount {
+      color: white;
+      font-size: 18px;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container fade-in">
-    <h1>📖 الدورات الأدبية ٢٠٢٥</h1>
-    <div class="subjects">
-      <a href="#" class="btn">اللغة العربية</a>
-      <a href="#" class="btn">الإنجليزية</a>
-      <a href="#" class="btn">الفرنسية</a>
-      <a href="#" class="btn">التاريخ</a>
-      <a href="#" class="btn">الجغرافيا</a>
-      <a href="#" class="btn">الفلسفة</a>
-      <a href="#" class="btn">الديانة</a>
-    </div>
-    <a href="index.html" class="back-btn">⬅ العودة</a>
-  </div>
+
+  <h1>📚 مواد الفرع الأدبي</h1>
+
+  <a class="button" href="https://www.mediafire.com/file/1ftav273wgjomfu/%25D8%25B9%25D8%25B1%25D8%25A8%25D9%258A_%25D8%25A7%25D8%25AF%25D8%25A8%25D9%258A.pdf/file" target="_blank">📖 اللغة العربية</a>
+
+  <a class="button" href="https://www.mediafire.com/file/rmsoncpl5ge2msr/%25D8%25A7%25D9%2586%25D9%2583%25D9%2584%25D9%258A%25D8%25B2%25D9%258A_%25D8%25A7%25D8%25AF%25D8%25A8%25D9%258A.pdf/file" target="_blank">🗣️ اللغة الإنكليزية</a>
+
+  <a class="button" href="https://www.mediafire.com/file/708h26b82vvvtb0/%25D9%2581%25D8%25B1%25D9%2586%25D8%25B3%25D9%258A_%25D8%25A7%25D8%25AF%25D8%25A8%25D9%258A.pdf/file" target="_blank">🇫🇷 اللغة الفرنسية</a>
+
+  <a class="button" href="https://www.mediafire.com/file/xqgecaku6h77se3/%25D8%25AF%25D9%258A%25D8%25A7%25D9%2586%25D8%25A9.pdf/file" target="_blank">☪️ التربية الدينية</a>
+
+  <a class="button" href="https://www.mediafire.com/file/4g5hq0e8g1rpr2m/%25D9%2581%25D9%2584%25D8%25B3%25D9%2581%25D8%25A9.pdf/file" target="_blank">💭 الفلسفة</a>
+
+  <a class="button" href="https://www.mediafire.com/file/hye2jyuzwyyafwa/%25D8%25AC%25D8%25BA%25D8%25B1%25D8%25A7%25D9%2581%25D9%258A%25D8%25A7.pdf/file" target="_blank">🗺️ الجغرافيا</a>
+
+  <a class="button" href="https://www.mediafire.com/file/902j6l2dz4uoau2/%25D8%25AA%25D8%25A7%25D8%25B1%25D9%258A%25D8%25AE.pdf/file" target="_blank">🏛️ التاريخ</a>
+
+  <a href="index.html" class="back-btn">⬅️ الرجوع للصفحة الرئيسية</a>
+
+  <p id="visitorCount">
+    👀 عدد الزوار: <span id="visits">جارٍ التحميل...</span>
+  </p>
+
+  <script src="https://api.countapi.xyz/hit/your-literary-page.com/visits?callback=updateCount"></script>
+  <script>
+    function updateCount(response) {
+      document.getElementById("visits").textContent = response.value;
+    }
+  </script>
+
 </body>
 </html>
